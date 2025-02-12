@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元宵快樂</title>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ff6b6b;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .祝福語 {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>元宵快樂！</h1>
+        <div class="button-container">
+            <!-- 按鈕 1 -->
+            <button class="btn" onclick="randomBlessing()">祝福一</button>
+            <!-- 按鈕 2 -->
+            <button class="btn" onclick="randomBlessing()">祝福二</button>
+            <!-- 按鈕 3 -->
+            <button class="btn" onclick="randomBlessing()">祝福三</button>
+            <!-- 按鈕 4 -->
+            <button class="btn" onclick="randomBlessing()">祝福四</button>
+        </div>
+        <div id="blessing-content" class="祝福語"></div>
+    </div>
+
+    <script>
+        // 定義祝福語数组
+        const blessings = [
+            "元宵節快樂，團團圓圓！！",
+            "元宵佳節，願你財源滾滾，好運連連！！",
+            "元宵節快樂，心想事成，萬事如意！！",
+            "元宵節，祝你身體健康，笑口常開！！"
+        ];
+
+        // 隨機選取祝福語
+        function randomBlessing() {
+            const randomIndex = Math.floor(Math.random() * blessings.length);
+            document.getElementById('blessing-content').textContent = blessings[randomIndex];
+        }
+
+        // 初始化隨機祝福語
+        window.onload = randomBlessing;
+    </script>
+</body>
+</html>
